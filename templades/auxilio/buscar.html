@@ -1,0 +1,31 @@
+
+{% extends "_base.html" %} {% load bootstrap %} {% block content %}
+
+
+{% if files %} {% for file in files %}
+<div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
+  <div class="w-full">
+  
+    <div class="grid gap-2 mb-2 md:grid-cols-3">
+
+<div class="card mt-2">
+<div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+>
+<div class="card-header"><strong>@{{ file.criado_por.username }}</strong></div><br>
+<div class="card-body d-flex flex-row justify-content-between">
+<div>
+  <a class="text-decoration-none text-left" href="/auxilio/{{ file.id }}/">
+    <h5 class="card-title"><strong class=" text-purple-600">{{ file.titulo }}</strong></h5><br>
+  </a><br><br>
+  <a class="text-decoration-none text-justify" href="/auxilio/{{ file.id }}/">
+    <p class="card-text mb-3">{{ file.descricao }}</p>
+  </a>
+      </div></div>
+     
+      <br>
+      {% endfor %} {% else %}<p>
+        Nenhum arquivo carregado ainda. para carregar arquivos.
+      </p>
+      {% endif %}
+</div></div></div></div></div>
+ {% endblock %}

@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+{% load bootstrap %}
+{% block TCCs %}
+{% if heading %}
+
+{% endif %}
+<div class="container grid px-10 mx-auto ">
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+      <div class="card  auth-card">
+          <div class="card-body">
+<form action="" method="post" enctype="multipart/form-data" >
+  {% csrf_token %}
+  
+  {{form|bootstrap}}
+       
+ <button class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-white" type="submit" value="submit">Enviar</button>
+</form>   </div></div></div></div> </div>
+
+{% endblock %}

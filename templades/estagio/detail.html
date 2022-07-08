@@ -1,0 +1,30 @@
+{% extends '_base.html' %} {% block content %}
+<div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="section-title">
+        <h3>Detalhes do arquivo de Estágio</span></h3><br>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body text-dark">
+          <h4><b>Título:</b></h4><p>{{estagio.titulo}}</p><br>
+          <h4><b>Descrição:</h4></b><br><p class="text-justify">{{estagio.descricao}}</p>
+    
+        
+          <a target="_blank" href="{{ estagio.file.url }}/">
+            <br>
+            <button type="button" class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+              Abrir<span class="btn-icon-right"> <i class="fa fa-folder-open"></i></span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+{% endblock %}

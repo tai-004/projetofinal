@@ -1,0 +1,82 @@
+{% extends "_base.html" %} {% load bootstrap %} {% block content %}
+<br>
+<strong><h1 class="text-center py-4 text-gray-500 dark:text-gray-400">Documentos de Estágio</h1><br></strong>
+<hr />
+<hr />
+
+{% if request.user.is_authenticated %}
+{% if user == estagio.criado_por or perms.estagio.est %}
+<a class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple" href="{% url 'estagio:postar' %}">
+  <div class="flex items-center">
+    <svg
+      class="w-5 h-5 mr-2"
+      fill="currentColor"
+      viewBox="0 0 20 20">
+      <path
+        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+      ></path>
+    </svg>
+    <span>Postar</span>
+  </div></a></div>
+{% endif %}{% endif %}
+
+<div class="container">
+  <div class="row">
+      <div class="col-12">
+          <form action="{% url 'estagio:publicar' %}">
+              <input type="text" name="publicar" placeholder="Digite o titulo..."/>
+              <button  class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple" type="submit"><i class="fa fa-search" aria-hidden="true"></i>Buscar</button>
+          </form>
+      </div>
+  </div>
+</div>
+
+{% if files %} {% for file in files %}
+<div class="container grid px-6 mx-auto">
+  <div class="container grid px-6 mx-auto">
+    
+      <div class="container grid px-6 mx-auto">
+<div class="grid gap-6 mb-8 md:grid-cols-2">
+<div class="card mt-2">
+  <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+>      
+<div class="card-header"><strong>@{{ file.criado_por.username }}</strong></div><br>
+  <div class="card-body d-flex flex-row justify-content-between">
+    <div>
+      <a class="text-decoration-none text-left" href="/estagio/{{ file.id }}/">
+        <h5 class="card-title"><strong class=" text-purple-600">{{ file.titulo }}</strong></h5>
+      </a><br><br>
+      <a class="text-decoration-none text-justify"  href="/estagio/{{ file.id }}/">
+        <p class="card-text mb-3">{{ file.descricao }}</p>
+      </a>   
+    </p><br>
+    {% if request.user.is_authenticated %}
+    {% if user == file.criado_por or perms.file.ed %}
+    <a href="/estagio/editar/{{ file.id }}">
+      <button type="button" class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+        Editar<span class="btn-icon-right"> <i class="fa fa-edit"></i></span>
+      </button>
+    </a> {% endif %}
+    {% endif %}
+    
+    {% if request.user.is_authenticated %}
+    {% if user == file.criado_por or perms.file.est %}
+    <a href="/estagio/excluir/{{ file.id }}">
+      <button type="button" class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+        Excluir<span class="btn-icon-right"> <i class="fa fa-trash"></i></span>
+      </button>
+    </a>{% endif %}
+    {% endif %}
+
+    <a target="_blank" href="{{ file.file.url }}/">
+      <button type="button" class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+        Abrir<span class="btn-icon-right"> <i class="fa fa-folder-open"></i></span>
+      </button>
+    </a>
+  </div>
+</div></div></div></div></div></div></div>
+<hr> 
+{% endfor %} {% else %}
+</div>
+
+{% endif %} {% endblock %}

@@ -1,0 +1,170 @@
+{% extends 'publico.html' %}
+{% block content %}
+{% load static %}
+
+<div class="grid gap-6 mb-8 md:grid-cols-6 xl:grid-cols-6">
+    <!-- Card -->
+
+        <p
+          class="mb-4 text-sm font-medium text-gray-600 dark:text-gray-400"
+        >
+        <div class="container grid px-6 mx-auto">
+            <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            CONTATO
+            </h2>
+           
+            <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">
+              Contatos de sentores do Campus Guanambi
+            </h4>
+            <div class="w-full overflow-hidden rounded-lg shadow-xs">
+              <div class="w-full overflow-x-auto">
+                <table class="w-full whitespace-no-wrap">
+                  <thead>
+                    <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                      <th class="px-4 py-3">Setor</th>
+                      <th class="px-4 py-3">Contato</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                    <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+                        <div class="w-full overflow-x-auto">
+                          <table class="w-full whitespace-no-wrap">
+                            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                              <tr class="text-gray-700 dark:text-gray-400">
+                                <td class="px-4 py-3">
+                                  <div class="flex items-center text-sm">
+                                    <!-- Avatar with inset shadow -->
+                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
+                                      <img
+          class="object-cover w-full h-full "
+          src="{% static '/img/3.jpeg' %}"
+          alt=""
+          loading="lazy"
+        />
+                                      <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                                    </div>
+                                    <div>
+                                      <p class="font-semibold"> Coordenação de Assuntos Estudantis</p>
+                                      <p class="text-xs text-gray-600 dark:text-gray-400">
+                                          Silvana Vanessa Martins da Silva Bonfim
+                                      </p>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td class="px-4 py-3 text-sm">
+                                  
+                                  Telefone: 77 3493-2100 – Ramal: 236<br>
+                                  E-mail: – silvana.bonfim@ifbaiano.edu.br
+                               
+                                </td></tr>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center text-sm">
+                                      <!-- Avatar with inset shadow -->
+                                      <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
+                                        <img
+                                        class="object-cover w-full h-full "
+                                        src="{% static '/img/3.jpeg' %}"
+                                        alt=""
+                                        loading="lazy"
+                                      />
+                                        <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                                      </div>
+                                      <div>
+                                        <p class="font-semibold">Núcleo de Relações Institucionais</p>
+                                        <p class="text-xs text-gray-600 dark:text-gray-400">
+                                            João Paulo Souza dos Santos
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 text-sm">
+                                    
+                                    Telefone: 77 3493-2100 – Ramal: 248<br>
+                                    E-mail: nri@guanambi.ifbaiano.edu.br
+                                 
+                                  </td></tr> 
+                                 
+                                    
+                                  <td class="px-4 py-3">
+                                    <div class="flex items-center text-sm">
+                                      <!-- Avatar with inset shadow -->
+                                      <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
+                                        <img
+                                        class="object-cover w-full h-full "
+                                        src="{% static '/img/3.jpeg' %}"
+                                        alt=""
+                                        loading="lazy"
+                                      />
+                                        <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                                      </div>
+                                      <div>
+                                        <p class="font-semibold">   Secretaria de Registros Acadêmicos</p>
+                                        <p class="text-xs text-gray-600 dark:text-gray-400">
+                                            
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 text-sm">
+                                    
+                                    E-mail: secretaria@guanambi.ifbaiano.edu.br
+                                 
+                                  </td> 
+                              </tr><td class="px-4 py-3">
+                                    <div class="flex items-center text-sm">
+                                      <!-- Avatar with inset shadow -->
+                                      <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
+                                        <img
+                                        class="object-cover w-full h-full "
+                                        src="{% static '/img/3.jpeg' %}"
+                                        alt=""
+                                        loading="lazy"
+                                      />
+                                        <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                                      </div>
+                                      <div>
+                                        <p class="font-semibold"> COORDENAÇÃO DE ENSINO </p>
+                                        <p class="text-xs text-gray-600 dark:text-gray-400">
+                                          Cristiane Silveira Mendes Nogueira
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 text-sm">
+                                    
+                                    Telefone: 77 3493-2100 – Ramal: 235<br>
+        Email: ce@guanambi.ifbaiano.edu.br
+                                 
+                                  </td></tr> <td class="px-4 py-3">
+                                    <div class="flex items-center text-sm">
+                                      <!-- Avatar with inset shadow -->
+                                      <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
+                                        <img
+          class="object-cover w-full h-full "
+          src="{% static '/img/3.jpeg' %}"
+          alt=""
+          loading="lazy"
+        />
+                                        <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                                      </div>
+                                      <div>
+                                        <p class="font-semibold"> Diretoria Acadêmica</p>
+                                        <p class="text-xs text-gray-600 dark:text-gray-400">
+                                          Última atualização: 24/04/2022 - 21:12 horas | Data de publicação: 14/12/2016 - 21:19 horas<br>
+                                          Aureluci Alves de Aquino
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </td>
+                                  <td class="px-4 py-3 text-sm">
+                                    
+                                    Telefone: 77 3493-2100 – Ramal: 207<br>
+                                    Email: da@guanambi.ifbaiano.edu.br
+                                 
+                                  </td></tr> 
+
+      
+      </div>
+    </div>
+                  </tbody>
+{% endblock %}

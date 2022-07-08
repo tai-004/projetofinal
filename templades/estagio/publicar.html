@@ -1,0 +1,28 @@
+{% extends "_base.html" %} {% load bootstrap %} {% block content %}
+
+{% if files %} {% for file in files %}
+
+<div class="grid gap-6 mb-8 md:grid-cols-2">
+<div class="card mt-2">
+  <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+>
+<div class="card-header"><strong>@{{ file.criado_por.username }}</strong></div><br>
+  <div class="card-body d-flex flex-row justify-content-between">
+    <div>
+      <a class="text-decoration-none text-left" href="/estagio/{{ file.id }}/">
+        <h5 class="card-title"><strong class=" text-purple-600">{{ file.titulo }}</strong></h5><br>
+      </a><br><br>
+      <a class="text-decoration-none text-justify" href="/estagio/{{ file.id }}/">
+        <p class="card-text mb-3">{{ file.descricao }}</p>
+      </a>
+    </div>
+    <div>
+     
+    </div>
+  </div>
+  <div class="card-footer text-muted">{{post.created_at}}</div>
+</div></div></div>
+{% empty %}{% endfor %} {% else %}
+<p>Não encontramos o post!</p></div>
+{% endif %}  
+ {% endblock %}

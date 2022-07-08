@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+{% load bootstrap %}
+{% block content %}
+<br><br>
+<div class="container grid px-6 mx-auto">
+  <div class="container grid px-6 mx-auto">
+    <div class="container grid px-6 mx-auto">
+
+<form action="" method="post" enctype="multipart/form-data" >
+  {% csrf_token %}
+  {{ form|bootstrap }}
+  <br>
+ <button class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"  type="submit" value="submit">Postar</button>
+</form>
+    </div></div></div>
+
+{% endblock %}

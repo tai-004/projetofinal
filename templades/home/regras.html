@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+{% load bootstrap %}
+{% block content %}
+
+
+<link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+<body>
+
+<div class="container mt-3">
+  <h2>Numbered List Group</h2>
+  <p>Use the .list-group-numbered class to create list items with numbers in front of them:</p>
+</div>
+  
+<div class="container mt-3">
+  <ol class="list-group list-group-numbered">
+    <li class="list-group-item">First item</li>
+    <li class="list-group-item">Second item</li>
+    <li class="list-group-item">Third item</li>
+  </ol>
+</div>
+
+{% endblock %}
